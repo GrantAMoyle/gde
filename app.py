@@ -4,7 +4,7 @@ from faker import Faker
 import os
 import logging
 import random
-import usegemini
+# import usegemini
 
 app = Flask(__name__)
 logger = logging.getLogger('waitress')
@@ -26,12 +26,12 @@ def getOSUInfo():
       "Oregon State University is known for its beautiful campus and vibrant student life.",
       "The university has a significant impact on the state's economy and workforce."
   ]
-  return usegemini.generate()
+  # return usegemini.generate()
   return random.choice(osu_facts)
   
 @app.route("/")
 def getRoot():
-  return "ROI Training Demo is working!\n"
+  return "Welcome OSU!\n"
 
 @app.route("/headers")
 def show_headers():

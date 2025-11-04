@@ -52,4 +52,4 @@ def generate():
     returnString=returnString + chunk.text
   return returnString
 
-generate()
+print(generate())
