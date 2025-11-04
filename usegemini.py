@@ -38,6 +38,7 @@ def generate():
       category="HARM_CATEGORY_HARASSMENT",
       threshold="OFF"
     )],
+    system_instruction=[types.Part.from_text(text="""This is the Oregon State University Chat Bot - please answer questions about the university""")],
     thinking_config=types.ThinkingConfig(
       thinking_budget=-1,
     ),
