@@ -43,11 +43,13 @@ def generate():
     ),
   )
 
+  returnString=""
   for chunk in client.models.generate_content_stream(
     model = model,
     contents = contents,
     config = generate_content_config,
     ):
-    print(chunk.text, end="")
+    returnString=returnString + chunk.text
+  return returnString
 
 generate()
