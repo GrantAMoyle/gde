@@ -10,6 +10,23 @@ logger = logging.getLogger('waitress')
 logger.setLevel(logging.DEBUG)
 fake = Faker()
 
+# Using Gemini, return a random piece of information about Oregon State University ondemand
+@app.route("/osu")
+def getOSUInfo():
+  osu_facts = [
+      "Oregon State University is located in Corvallis, Oregon.",
+      "The mascot of Oregon State University is the Beaver, and its name is Benny the Beaver.",
+      "Oregon State University is a leading research institution, particularly in areas like oceanography, forestry, and agricultural sciences.",
+      "The university was founded in 1868.",
+      "Oregon State University is one of only two universities in the U.S. to have Sea Grant, Space Grant, and Sun Grant designations.",
+      "The official colors of Oregon State University are orange and black.",
+      "Oregon State University has a strong engineering program.",
+      "The university offers over 200 undergraduate and 100 graduate degree programs.",
+      "Oregon State University is known for its beautiful campus and vibrant student life.",
+      "The university has a significant impact on the state's economy and workforce."
+  ]
+  return random.choice(osu_facts)
+  
 @app.route("/")
 def getRoot():
   return "ROI Training Demo is working!\n"
@@ -38,6 +55,8 @@ def getRandomName():
 @app.route("/version")
 def version():
   return "ROI Training Demo 1.0\n"
+
+
 
 if __name__ == "__main__":
   serve(app,host="0.0.0.0",port=int(os.environ.get("PORT", 8080)))
