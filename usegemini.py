@@ -21,9 +21,8 @@ def generate():
   ]
 
   generate_content_config = types.GenerateContentConfig(
-    temperature = 1,
+    temperature = 0.5,
     top_p = 0.95,
-    seed = 0,
     max_output_tokens = 65535,
     safety_settings = [types.SafetySetting(
       category="HARM_CATEGORY_HATE_SPEECH",
